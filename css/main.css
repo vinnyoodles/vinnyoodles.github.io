@@ -3,7 +3,7 @@ body {
   width: 70%;
 }
 nav ul, footer ul {
-  padding: 0px;
+  padding: 0;
   list-style: none;
   font-weight: bold;
 }

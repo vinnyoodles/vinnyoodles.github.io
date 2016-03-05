@@ -19,8 +19,8 @@ html, body {
   align-items: center;
 }
 .picture-1 {
-  background: #FF7E2C;
-  background: linear-gradient(to bottom right, #FF7E2C, #FF2632); /* Standard syntax */
+  background: #FF7D2C;
+  background: linear-gradient(to bottom right, #F0811B, #FA2825); 
   width: 450px;
   height: 380px;
 }

@@ -12,15 +12,14 @@ html, body {
   width: 100%;
   height: 100%;
 }
-.background {
+.picture-1, .picture-2 {
   display: -webkit-flex;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.picture-1 {
   background: #FF7E2C;
-  background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, red, ); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #FF7E2C, #FF2632); /* Standard syntax */
   width: 450px;
   height: 380px;
@@ -36,4 +35,19 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.text {
+  background: #BDBDBD;
+  color: #5B5B5B;
+  width: 235px;
+  height: 370px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:18px;
+  padding:20px;
+}
+.vertical-line{
+  width: 20px;
+  border-right:1px solid #E0E0E0;
+  float:left;
+  height:410px;
 }

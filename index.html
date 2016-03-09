@@ -8,12 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/snake.js"></script>
+    <script type="text/javascript" src="js/food.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
   </head>
-  <body>
-    <div class="container">
-      <img src="image/me.jpg" alt="Picture of me" style="width:320px;height:239px;display:block;margin-left:auto;margin-right:auto;">
-      <h1 style="text-align:center">Vincent Le</h1>
-    </div><!-- /.container -->
+  <body onLoad="init()">
+    <canvas id="gameCanvas">Error</canvas>
+    <img id="me" src="image/me.jpg" alt="Picture of me">
+    <h1 style="text-align:center">Vincent Le</h1>
     <footer>
     <ul style="text-align:center">
       <li><a href="image/vincent.pdf">Resume</a></li>

@@ -42,16 +42,12 @@ function update() {
     ctx.lineWidth = "3";
     ctx.rect(0, 0, scaledWidth, scaledHeight);
     ctx.stroke();
-    // console.log(alex.body[0]);
-    for (var i = 0; i < alex.length; i++){
-      // console.log(i);
-      // console.log(alex.body[i]);
-       draw(alex.body[i],"red");
+    for (var i = 0; i < alex.body.length; i++){
+       draw(alex.body[i], alex.body[i].color);
     }
     draw(apple, "black");
     //TODO add collision detection with body
     if (alex.colliding(canvas)){
-      console.log("collision");
       colliding = true;
       setTimeout(function(){
         reset()
@@ -82,7 +78,6 @@ function reset() {
 }
 function addApple() {
   apple = new Box(random(canvas.width), random(canvas.height));
-  console.log(apple);
 }
 function random(size) {
   return Math.floor((Math.random() * size) / 30) * 30;

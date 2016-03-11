@@ -7,7 +7,9 @@ scaledWidth,//actual size
 scaledHeight,
 score,
 alex,//the snake aka you
-colliding = false;
+apple,
+colliding = false,
+playing = false;
 
 window.addEventListener('keydown', this.keyPressed , false);
 function init() {
@@ -21,7 +23,7 @@ function init() {
   ctx.width     = scaledWidth;
   ctx.height    = scaledHeight;
   scale         = scaledWidth / width;
-  console.log('canvas is size: ' + scaledWidth + ' by ' + scaledHeight + ' with scale of ' + scale)
+  console.log('canvas is size: ' + canvas.width + ' by ' + canvas.height + ' with scale of ' + scale)
 
   reset()
   //Start running the game
@@ -32,60 +34,77 @@ function init() {
 
 //run the game in intervals
 function update() {
-  ctx.clearRect(0, 0, scaledWidth, scaledHeight);
-  ctx.beginPath();
-  ctx.strokeStyle = "black";
-  ctx.lineWidth = "3";
-  ctx.rect(0, 0, scaledWidth, scaledHeight);
-  ctx.stroke();
-  drawAlex();
-  if (alex.colliding(canvas)) {
-    console.log("collision");
-    colliding = true;
-    setTimeout(function(){
-      reset()
-    }, 500);
-  }
-  else if (!colliding){
-    console.log("moving");
-    alex.move();
+  //don't update when there is a wall collision
+  if (!colliding){
+    ctx.clearRect(0, 0, scaledWidth, scaledHeight);
+    ctx.beginPath();
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = "3";
+    ctx.rect(0, 0, scaledWidth, scaledHeight);
+    ctx.stroke();
+    // console.log(alex.body[0]);
+    for (var i = 0; i < alex.length; i++){
+      // console.log(i);
+      // console.log(alex.body[i]);
+       draw(alex.body[i],"red");
+    }
+    draw(apple, "black");
+    //TODO add collision detection with body
+    if (alex.colliding(canvas)){
+      console.log("collision");
+      colliding = true;
+      setTimeout(function(){
+        reset()
+      }, 500);
+    }
+    //continue game
+    else if (!colliding && playing){
+      alex.move();
+      if (alex.eating(apple)){
+        alex.grow();
+        addApple();
+      }
+    }
   }
 }
 
 //initialize game
 function reset() {
   alex = new Snake();
-  alex.x = 40;
-  alex.y = 40;
+  alex.head().direction = "right";
+  for(var i = 0; i < 5; i++){
+    alex.grow();
+  }
   score = 0;
   colliding = false;
+  playing = false;
+  addApple();
 }
-function drawAlex(){
-  ctx.fillStyle = "red";
-  ctx.fillRect(alex.x, alex.y, alex.width, alex.height);
+function addApple() {
+  apple = new Box(random(canvas.width), random(canvas.height));
+  console.log(apple);
 }
-function drawFood(){
-
+function random(size) {
+  return Math.floor((Math.random() * size) / 30) * 30;
 }
-
-
-function keyPressed(e) {
+function draw(object, color){
+  ctx.fillStyle = color;
+  ctx.fillRect(object.x, object.y, object.size, object.size);
+}
+function keyPressed(e){
   var key = e.keyCode;
   e.preventDefault();
-  if((key == 37 || key == 65) && alex.direction != "right") { //left key
-    console.log("left");
-    alex.direction = "left";
+  playing = true;
+  if((key == 37 || key == 65) && alex.head().direction != "right") { //left key
+    alex.head().direction = "left";
   }
-  else if((key == 39 || key == 68) && alex.direction != "left") { //right key
-    console.log("right");
-    alex.direction = "right";
+  else if((key == 39 || key == 68) && alex.head().direction != "left") { //right key
+    alex.head().direction = "right";
   }
-  else if ((key == 38 || key == 87) && alex.direction != "down") { //up key
-    console.log("up");
-    alex.direction = "up";
+  else if ((key == 38 || key == 87) && alex.head().direction != "down") { //up key
+    alex.head().direction = "up";
   }
-  else if ((key == 40 || key == 83) && alex.direction != "up") { //down key
-    console.log("down");
-    alex.direction = "down";
-    }
+  else if ((key == 40 || key == 83) && alex.head().direction != "up") { //down key
+    alex.head().direction = "down";
   }
+}

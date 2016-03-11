@@ -1,31 +1,48 @@
 var Snake = function() {
-  this.x = 0;
-  this.y = 0;
-  this.width = 20;
-  this.height = 20;
-  this.displacement = 20;
-  this.direction = "";
-  this.move = function() {
-    // console.log("x = " + this.x + " y = " + this.y);
-    if (this.direction == "up"){
-      this.y -= this.displacement;
-    }
-    else if (this.direction == "down"){
-      this.y += this.displacement;
-
-    }
-    else if (this.direction == "left"){
-      this.x -= this.displacement;
-
-    }
-    else if (this.direction == "right"){
-      this.x += this.displacement;
-    }
+  this.body = [];
+  this.body.push(new Box(30, 30));
+  this.length = 1;
+  this.head = function() {
+    return this.body[0];
   }
-  this.colliding = function(canvas) {
-    return (this.x <= 0 && this.direction == 'left') ||
-           (this.y <= 0 && this.direction == 'up') ||
-           (this.x + this.width >= canvas.width && this.direction == 'right') ||
-           (this.y + this.height >= canvas.height && this.direction == 'down');
+  this.newHead = function() {
+    var new_head = "";
+    switch(this.head().direction) {
+      case "up":
+        new_head = new Box(this.head().x, this.head().y - this.head().size);
+        new_head.direction = "up";
+        break;
+      case "down":
+        new_head = new Box(this.head().x, this.head().y + this.head().size);
+        new_head.direction = "down";
+        break;
+      case "right":
+        new_head = new Box(this.head().x + this.head().size, this.head().y);
+        new_head.direction = "right";
+        break;
+      case "left":
+        new_head = new Box(this.head().x - this.head().size, this.head().y);
+        new_head.direction = "left";
+        break;
+      }
+    return new_head;
+  }
+  this.move = function() {
+    this.grow();
+    this.body.pop();
+    this.length--;
+  }
+  this.grow = function() {
+    this.body.unshift(this.newHead());
+    this.length++;
+  }
+  this.colliding = function(canvas){
+    return (this.head().x <= 0 && this.head().direction == 'left') ||
+    (this.head().y <= 0 && this.head().direction == 'up') ||
+    (this.head().x + this.head().size >= canvas.width && this.head().direction == 'right') ||
+    (this.head().y + this.head().size >= canvas.height && this.head().direction == 'down');
+  }
+  this.eating = function(apple){
+    return this.head().x == apple.x && this.head().y == apple.y;
   }
 };

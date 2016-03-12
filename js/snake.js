@@ -70,43 +70,47 @@ var Snake = function() {
       (head.direction == 'down'  && head.y + head.size >= y      && head.y <= height && isInBetween(head.x, head.x + head.size, x, width)) ||
       (head.direction == 'right' && head.x + head.size >= x      && head.x <= width && isInBetween(head.y, head.y + head.size, y, height)) ||
       (head.direction == 'left'  && head.x <= width  && head.x >= x && isInBetween(head.y, head.y + head.size, y, height));
-
-    }
-    this.collidingBody = function() {
-      for(var i = 1; i < this.body.length; i++) {
-        if (this.head().x == this.body[i].x && this.head().y == this.body[i].y) {
-          return true;
-        }
+  }
+  this.collidingBody = function() {
+    for(var i = 1; i < this.body.length; i++) {
+      if (this.head().x == this.body[i].x && this.head().y == this.body[i].y) {
+        return true;
       }
-      return false;
     }
-    this.eating = function(apple){
-      return this.head().x == apple.x && this.head().y == apple.y;
-    }
-  };
-  function isInBetween(left_point, right_point, here, there) {
-    return (left_point  > here && left_point  < there) ||
-    (right_point > here && right_point < there);
+    return false;
   }
-  function randomColor() {
-    var colors = ['#ffcccc', '#ffffcc', '#ccffcc', '#ccffff', '#ccccff', '#ffccff'];
-    return colors[Math.floor(Math.random() * colors.length)];
+  this.eating = function(apple){
+    return this.head().x == apple.x && this.head().y == apple.y;
   }
-  function modifyColor(hex, lum) {
-    // validate hex string
-    hex = String(hex).replace(/[^0-9a-f]/gi, '');
-    if (hex.length < 6) {
-      hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+  this.boom = function() {
+    for (var i = 0; i < this.body.length; i++) {
+      this.body[i].boom(this.body[i].color);
     }
-    lum = lum || 0;
+  }
+};
+function isInBetween(left_point, right_point, here, there) {
+  return (left_point  > here && left_point  < there) ||
+  (right_point > here && right_point < there);
+}
+function randomColor() {
+  var colors = ['#ffcccc', '#ffffcc', '#ccffcc', '#ccffff', '#ccccff', '#ffccff'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+function modifyColor(hex, lum) {
+  // validate hex string
+  hex = String(hex).replace(/[^0-9a-f]/gi, '');
+  if (hex.length < 6) {
+    hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+  }
+  lum = lum || 0;
 
-    // convert to decimal and change luminosity
-    var rgb = "#", c, i;
-    for (i = 0; i < 3; i++) {
-      c = parseInt(hex.substr(i*2,2), 16);
-      c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-      rgb += ("00"+c).substr(c.length);
-    }
-
-    return rgb;
+  // convert to decimal and change luminosity
+  var rgb = "#", c, i;
+  for (i = 0; i < 3; i++) {
+    c = parseInt(hex.substr(i*2,2), 16);
+    c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+    rgb += ("00"+c).substr(c.length);
   }
+
+  return rgb;
+}

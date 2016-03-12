@@ -28,6 +28,8 @@ p {
   color: #333;
 }
 footer {
+  width: 400px;
+  margin: auto;
   border-top: 1px solid #d5d5d5;
   font-size: .8em;
 }
@@ -40,6 +42,14 @@ ul.posts li {
 }
 .left-column {
   text-align:right;
+}
+h1 {
+  width: 175px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 #me {
    width:320px;

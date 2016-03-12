@@ -1,16 +1,16 @@
 var canvas,
-    ctx,
-    width = 1000,//theoretical size
-    height = 1000,
-    scale,
-    scaledWidth,//actual size
-    scaledHeight,
-    score,
-    alex,//the snake aka you
-    apple,
-    colliding = false,
-    playing = false,
-    obstacles;
+ctx,
+width = 1000,//theoretical size
+height = 1000,
+scale,
+scaledWidth,//actual size
+scaledHeight,
+score,
+alex,//the snake aka you
+apple,
+colliding = false,
+playing = false,
+obstacles;
 
 window.addEventListener('keydown', this.keyPressed , false);
 
@@ -50,7 +50,7 @@ function update() {
     ctx.rect(0, 0, scaledWidth, scaledHeight);
     ctx.stroke();
     for (var i = 0; i < alex.body.length; i++){
-       draw(alex.body[i], alex.body[i].color);
+      draw(alex.body[i], alex.body[i].color);
     }
     draw(apple, "black");
     if (alex.collidingWall(canvas) || alex.collidingBody() || alex.collidingObjects(obstacles)){
@@ -84,15 +84,25 @@ function reset() {
   addApple();
 }
 function addApple() {
-  apple = new Box(random(canvas.width), random(canvas.height));
+  var coor = random(canvas.width, canvas.height);
+  apple = new Box(coor['x'], coor['y']);
 }
-function random(size) {
+function random(width, height) {
   var x, y;
   do {
-    x = Math.floor((Math.random() * size) / 30) * 30;
-    y = Math.floor((Math.random() * size) / 30) * 30;
-  } while (x < 0 && y < 0);
+    x = Math.floor((Math.random() * width) / 30) * 30;
+    y = Math.floor((Math.random() * height) / 30) * 30;
+  } while (isInsideHtmlElements(x, y));
   return {x: x, y: y};
+}
+function isInsideHtmlElements(x, y){
+  for(var i = 0; i < obstacles.length; i++){
+    var obj = obstacles[i];
+    if (isInBetween(x, x + alex.size, obj['x'], obj['x'] + obj['width']) && isInBetween(y, y + alex.size, obj['y'], obj['y'] + obj['height'])){
+      return true;
+    }
+  }
+  return false;
 }
 function draw(object, color){
   ctx.fillStyle = color;

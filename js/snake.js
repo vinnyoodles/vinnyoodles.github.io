@@ -2,7 +2,6 @@ var Snake = function() {
   this.body = [];
   var head = new Box(30, 30);
   head.color = randomColor();
-  console.log(head.color);
   this.body.push(head);
   this.head = function() {
     return this.body[0];
@@ -46,11 +45,19 @@ var Snake = function() {
     head.color = modifyColor(this.head().color, -0.01);
     this.body.unshift(head);
   }
-  this.colliding = function(canvas){
+  this.collidingWall = function(canvas){
     return (this.head().x <= 0 && this.head().direction == 'left') ||
     (this.head().y <= 0 && this.head().direction == 'up') ||
     (this.head().x + this.head().size >= canvas.width && this.head().direction == 'right') ||
     (this.head().y + this.head().size >= canvas.height && this.head().direction == 'down');
+  }
+  this.collidingBody = function() {
+    for(var i = 1; i < this.body.length; i++) {
+      if (this.head().x == this.body[i].x && this.head().y == this.body[i].y) {
+        return true;
+      }
+    }
+    return false;
   }
   this.eating = function(apple){
     return this.head().x == apple.x && this.head().y == apple.y;

@@ -47,7 +47,8 @@ function update() {
     }
     draw(apple, "black");
     //TODO add collision detection with body
-    if (alex.colliding(canvas)){
+    if (alex.collidingWall(canvas) || alex.collidingBody()){
+      console.log('collision');
       colliding = true;
       setTimeout(function(){
         reset()
@@ -68,7 +69,7 @@ function update() {
 function reset() {
   alex = new Snake();
   alex.head().direction = "right";
-  for(var i = 0; i < 5; i++){
+  for(var i = 0; i < 20; i++){
     alex.grow();
   }
   score = 0;

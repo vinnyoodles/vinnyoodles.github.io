@@ -94,7 +94,7 @@ function update() {
 function reset() {
 	alex = new Snake();
 	alex.head().direction = "right";
-	for(var i = 0; i < 5; i++){
+	for(var i = 0; i < 20; i++){
 		alex.grow();
 	}
 	score = 0;

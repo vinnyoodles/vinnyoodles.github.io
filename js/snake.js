@@ -93,7 +93,7 @@ function isInBetween(left_point, right_point, here, there) {
   (right_point > here && right_point < there);
 }
 function randomColor() {
-  var colors = ['#ffcccc', '#ffffcc', '#ccffcc', '#ccffff', '#ccccff', '#ffccff'];
+  var colors = ['#ffcccc', '#ffffcc', '#ccffcc', '#ccffff', '#ccccff', '#ffccff', '#ff3333', '#4dff4d', '#1affff', '#1a75ff', '#d24dff'];
   return colors[Math.floor(Math.random() * colors.length)];
 }
 function modifyColor(hex, lum) {

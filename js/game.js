@@ -105,14 +105,14 @@ function reset() {
 	addApple();
 }
 function addApple() {
-	var coor = random(canvas.width, canvas.height);
+	var coor = random(canvas.width - alex.size, canvas.height - alex.size);
 	apple = new Box(coor['x'], coor['y']);
 }
 function random(width, height) {
 	var x, y;
 	do {
-		x = Math.floor((Math.random() * width) / 30) * 30;
-		y = Math.floor((Math.random() * height) / 30) * 30;
+		x = Math.floor((Math.random() * width) / alex.size) * alex.size;
+		y = Math.floor((Math.random() * height) / alex.size) * alex.size;
 	} while (isInsideHtmlElements(x, y) || isOnAlex(x, y));
 	return {x: x, y: y};
 }

@@ -1,6 +1,7 @@
 var Snake = function() {
   this.body = [];
-  var head = new Box(30, 30);
+  this.size = 30;
+  var head = new Box(this.size, this.size);
   head.color = randomColor();
   this.body.push(head);
   this.head = function() {

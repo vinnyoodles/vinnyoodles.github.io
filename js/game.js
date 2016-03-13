@@ -47,8 +47,8 @@ function init() {
 function update() {
 	ctx.clearRect(0, 0, scaledWidth, scaledHeight);
 	if (instruction_life > 1){
-	  instruction_life -= 4;
-		ctx.globalAlpha = instruction_life / 300;
+	  instruction_life --;
+		ctx.globalAlpha = instruction_life / 100;
 		ctx.font = ctx.font.replace(/\d+px/, "2em");
 		ctx.fillText(instruction_message, scale * (scaledWidth / 6), scale * (3 * scaledHeight / 5) + instruction_life);
 		ctx.globalAlpha = 1;
@@ -113,8 +113,16 @@ function random(width, height) {
 	do {
 		x = Math.floor((Math.random() * width) / 30) * 30;
 		y = Math.floor((Math.random() * height) / 30) * 30;
-	} while (isInsideHtmlElements(x, y));
+	} while (isInsideHtmlElements(x, y) || isOnAlex(x, y));
 	return {x: x, y: y};
+}
+function isOnAlex(x, y) {
+	for (var i = 0; i < alex.body.length; i ++){
+		if (alex.body[i].x == x && alex.body[i].y == y)
+		  return true;
+	}
+	return false;
+
 }
 function isInsideHtmlElements(x, y){
 	for(var i = 0; i < obstacles.length; i++){

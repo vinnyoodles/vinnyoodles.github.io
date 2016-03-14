@@ -47,10 +47,10 @@ var Snake = function() {
     this.body.unshift(head);
   }
   this.collidingWall = function(canvas){
-    return (this.head().x <= 0                                && this.head().direction == 'left') ||
-           (this.head().y <= 0                                && this.head().direction == 'up') ||
-           (this.head().x + this.head().size >= canvas.width  && this.head().direction == 'right') ||
-           (this.head().y + this.head().size >= canvas.height && this.head().direction == 'down');
+    return (this.head().x <= 0                               ) ||
+           (this.head().y <= 0                               ) ||
+           (this.head().x + this.head().size >= canvas.width ) ||
+           (this.head().y + this.head().size >= canvas.height);
   }
   this.collidingObjects = function(objects) {
     var head = this.head();

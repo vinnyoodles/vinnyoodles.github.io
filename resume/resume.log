@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 AUG 2017 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 AUG 2017 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**resume.tex vincent.pdf
+**resume.tex
 (./resume.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
@@ -150,50 +150,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
+Underfull \hbox (badness 10000) in paragraph at lines 20--20
 
  []
 
 
-Overfull \hbox (27.75261pt too wide) in paragraph at lines 21--22
+Overfull \hbox (27.75261pt too wide) in paragraph at lines 22--23
 []\OT1/cmr/m/n/10 Worked on mak-ing Mix-max more into a fully fledged cus-tomer
  re-la-tion-ship man-age-ment. 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 24.
+(Font)              <7> on input line 25.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 24.
+(Font)              <5> on input line 25.
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ´ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
 
-Overfull \hbox (1.9181pt too wide) in paragraph at lines 32--35
+Overfull \hbox (1.9181pt too wide) in paragraph at lines 33--36
 \OT1/cmr/m/n/10 iOS li-brary im-ple-men-ta-tion of a tile/mosaic based col-lec-
 tion view, based off of Snapchats
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
@@ -207,7 +207,7 @@ Here is how much of TeX's memory you used:
  4409 multiletter control sequences out of 15000+600000
  5548 words of font info for 20 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,6n,21p,285b,141s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,6n,21p,273b,141s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/
 local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/lo
@@ -215,7 +215,7 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on resume.pdf (1 page, 70460 bytes).
+Output written on resume.pdf (1 page, 70702 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  20 compressed objects within 1 object stream

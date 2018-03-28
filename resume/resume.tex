@@ -1,42 +1,56 @@
 \documentclass[line,margin]{res}
-    \usepackage[none]{hyphenat}
-    \usepackage{textcomp}
-    \begin{document}
+\usepackage[none]{hyphenat}
+\usepackage{textcomp}
+\usepackage{hyperref} 
+
+\begin{document}
 \name{{\LARGE Vincent Le}}
-\address{vincentl@vt.edu | (703) 992-5598 | github.com/vinnyoodles}
+\address{vincentl@vt.edu | (703) 992-5598 | \textbf{\href{https://github.com/vinnyoodles}{github.com/vinnyoodles}}}
 \begin{resume}
 	\vspace{-5mm}
 	\section{EDUCATION}
-	\textbf{Virginia Tech}, {\sl BS in Computer Science} GPA: 3.77\hfill May 2018\\Blacksburg, VA
+		\textbf{Virginia Tech}, {\sl BS in Computer Science} GPA: 3.77\hfill May 2018\\Blacksburg, VA
+
 	\section{EXPERIENCE}
-	\textbf{Virginia Tech}, {\sl Undergraduate Teaching Assistant}\hfill Aug 2017 | Present\\Blacksburg, VA\\\begin{itemize} \itemsep 1pt
-	\item Held office hours for the Data Structures and Algorithms course (CS 3114).
-	\item Topics include sorting, graphs, trees, hashing and algorithm analysis.
-	\end{itemize}
-	\textbf{Mixmax}, {\sl Software Engineering Intern}\hfill Aug 2016 | Aug 2017\\San Francisco, CA\\\begin{itemize} \itemsep 1pt
-	\item Implemented CRUD functions for supporting multiple Mixmax teams and organizations.
-	\item Added Chrome extension logic to embed email draft metadata into Gmail HTML.
-	\item Rewrote Backbone frontend view code into React reusable components.
-	\item Added Chrome extension logic to embed Mixmax into Salesforce HTML for integrating with its metadata.
-	\item Implemented a background sync of Salesforce contact and lead data for autofilling metadata in forms and templates.
-	\end{itemize}
+		\textbf{Virginia Tech}, {\sl Undergraduate Research Assistant}\hfill Feb 2018 | Present\\Blacksburg, VA\\
+		\begin{itemize} \itemsep 1pt
+			\item Developed bioinformatics application for running and managing genome analysis.
+			\item Implemented backend using flask and frontend with Bootstrap.
+			\item Managed background jobs using celery and redis.
+			\item Used Docker Compose to manage MongoDB, flask, redis and celery instances.
+		\end{itemize}
+
+		\textbf{Virginia Tech}, {\sl Undergraduate Teaching Assistant}\hfill Aug 2017 | Present\\Blacksburg, VA\\
+		\begin{itemize} \itemsep 1pt
+		\item Held office hours for the Data Structures and Algorithms course (CS 3114) for students
+			  to get help on projects and homeworks.
+		\item Topics covered were sorting, searching, graphs, trees, hashing, recurrence relations and algorithm analysis.
+		\end{itemize}
+
+		\textbf{Mixmax}, {\sl Software Engineering Intern}\hfill Aug 2016 | Aug 2017\\San Francisco, CA\\
+		\begin{itemize} \itemsep 1pt
+			\item Implemented CRUD functions for supporting multiple Mixmax teams and organizations.
+			\item Added Chrome extension logic to embed email draft metadata into Gmail HTML.
+			\item Rewrote Backbone frontend view code into React reusable components.
+			\item Added Chrome extension logic to embed Mixmax into Salesforce HTML for integrating with its metadata.
+			\item Implemented a background sync of Salesforce contact and lead data for autofilling metadata in forms and templates.
+		\end{itemize}
+
 	\section{PROJECTS}
-    \textbf{Collaboard}, {\sl Android, node.js, socket.io, MongoDB}\\ https://github.com/vinnyoodles/whiteboard\\\begin{itemize} \itemsep 1pt
-	\item Published an Android app with realtime whiteboarding and voice communication features.
-	\item Wrote node.js server with WebSocket communication protocol using socket.io and deployed onto Heroku.
-	\item Persisted canvas data with base64 encoding in MongoDB.
-	\item Implemented audio communication by streaming bytes through WebSockets.
-    \end{itemize}
-	\textbf{cartera}, {\sl swift, xcode, UIKit, Parse}\\ https://github.com/makersofawesome/cartera\_ios\\\begin{itemize} \itemsep 1pt
-	\item Developed an iOS app that supports peer to peer bank withdrawals.
-	\item Wrote the networking client for the Capital One API and the Parse backend using NSURLConnection. 
-	\item Implemented view logic following the MVC paradigm using UIKit and Mapkit.
-	\end{itemize}
-	\textbf{mosaic-layout}, {\sl swift, xcode, UIKit}\\ https://github.com/vinnyoodles/mosaic-layout\\iOS library implementation of a tile/mosaic based collection view, written with a protocol oriented design pattern.\\
-	\section{SKILLS}
+	    \textbf{Collaboard}, {\sl Android, node.js, socket.io, MongoDB}\\ https://github.com/vinnyoodles/whiteboard\\
+	    \begin{itemize} \itemsep 1pt
+			\item Published an Android app with realtime whiteboarding and voice chat features.
+			\item Wrote node.js server with WebSocket communication protocol using socket.io and deployed onto Heroku.
+			\item Persisted canvas data with base64 encoding in MongoDB.
+			\item Implemented audio communication by streaming bytes through WebSockets.
+	    \end{itemize}
+	    \textbf{mosaic-layout}, {\sl swift, xcode, UIKit}\\ 
+	    https://github.com/vinnyoodles/mosaic-layout\\
+	    iOS library implementation of a tile/mosaic based collection view, written with a protocol oriented design pattern.\\
+
 	\begin{tabular}{@{}ll}
-		\textbf{Programming Languages}: & Java, C, Javascript, Swift   \\
-		\textbf{Frameworks/Libraries}:  & node.js, backbone.js, React, UIKit, MapKit, Android  \\
+		\textbf{Programming Languages}: & Java, C, Javascript, Python   \\
+		\textbf{Frameworks/Libraries}:  & node.js, backbone.js, React, Socket.io, MongoDB, Android \\
 	\end{tabular}
 \end{resume}
 \end{document}

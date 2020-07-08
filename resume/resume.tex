@@ -2,17 +2,31 @@
 \usepackage[none]{hyphenat}
 \usepackage{textcomp}
 \usepackage{hyperref} 
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
 
 \begin{document}
 \name{{\LARGE Vincent Le}}
-\address{vincentl@vt.edu | (703) 992-5598 | \textbf{\href{https://github.com/vinnyoodles}{github.com/vinnyoodles}}}
+\address{vinnyoodles@gmail.com | \textbf{\href{https://github.com/vinnyoodles}{github.com/vinnyoodles}}}
 \begin{resume}
 	\vspace{-5mm}
 	\section{EDUCATION}
-		\textbf{Virginia Tech}, {\sl BS in Computer Science} GPA: 3.77\hfill May 2018\\Blacksburg, VA
+		\textbf{Virginia Tech}, {\sl BS in Computer Science} \hfill May 2018\\Blacksburg, VA
 
 	\section{EXPERIENCE}
-		\textbf{Virginia Tech}, {\sl Undergraduate Research Assistant}\hfill Feb 2018 | Present\\Blacksburg, VA\\
+		\textbf{Facebook}, {\sl Software Engineer}\hfill Jan 2020 | Present\\Seattle, WA\\
+		\begin{itemize} \itemsep 1pt
+			\item Built Marketplace features with a focus towards selling through the News Feed and Timeline
+		\end{itemize}
+		\textbf{Facebook}, {\sl Software Engineer}\hfill July 2018 | Dec 2019\\Menlo Park, CA\\
+		\begin{itemize} \itemsep 1pt
+			\item Worked in the Business Integrity team handling transparency and control around ads
+			\item \textbf{\href{https://facebook.com/ads/library}{facebook.com/ads/library}}
+			\item \textbf{\href{https://facebook.com/ads/library/report}{facebook.com/ads/library/report}}
+		\end{itemize}
+		\textbf{Virginia Tech}, {\sl Undergraduate Research Assistant}\hfill Feb 2018 | May 2018\\Blacksburg, VA\\
 		\begin{itemize} \itemsep 1pt
 			\item Developed bioinformatics application for running and managing genome analysis.
 			\item Implemented backend using flask and frontend with Bootstrap.
@@ -20,7 +34,7 @@
 			\item Used Docker Compose to manage MongoDB, flask, redis and celery instances.
 		\end{itemize}
 
-		\textbf{Virginia Tech}, {\sl Undergraduate Teaching Assistant}\hfill Aug 2017 | Present\\Blacksburg, VA\\
+		\textbf{Virginia Tech}, {\sl Undergraduate Teaching Assistant}\hfill Aug 2017 | May 2018\\Blacksburg, VA\\
 		\begin{itemize} \itemsep 1pt
 		\item Held office hours for the Data Structures and Algorithms course (CS 3114) for students
 			  to get help on projects and homeworks.
@@ -36,21 +50,10 @@
 			\item Implemented a background sync of Salesforce contact and lead data for autofilling metadata in forms and templates.
 		\end{itemize}
 
-	\section{PROJECTS}
-	    \textbf{Collaboard}, {\sl Android, node.js, socket.io, MongoDB}\\ https://github.com/vinnyoodles/whiteboard\\
-	    \begin{itemize} \itemsep 1pt
-			\item Published an Android app with realtime whiteboarding and voice chat features.
-			\item Wrote node.js server with WebSocket communication protocol using socket.io and deployed onto Heroku.
-			\item Persisted canvas data with base64 encoding in MongoDB.
-			\item Implemented audio communication by streaming bytes through WebSockets.
-	    \end{itemize}
-	    \textbf{mosaic-layout}, {\sl swift, xcode, UIKit}\\ 
-	    https://github.com/vinnyoodles/mosaic-layout\\
-	    iOS library implementation of a tile/mosaic based collection view, written with a protocol oriented design pattern.\\
 
 	\begin{tabular}{@{}ll}
-		\textbf{Programming Languages}: & Java, C, Javascript, Python   \\
-		\textbf{Frameworks/Libraries}:  & node.js, backbone.js, React, Socket.io, MongoDB, Android \\
+		\textbf{Programming Languages}: & Java, Javascript, PHP   \\
+		\textbf{Frameworks/Libraries}:  & node.js, React, React Native \\
 	\end{tabular}
 \end{resume}
 \end{document}
